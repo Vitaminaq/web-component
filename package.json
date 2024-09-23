@@ -1,0 +1,47 @@
+{
+  "name": "ssr-demo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development jiti server",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cross-env vite build --ssrManifest --outDir dist/client",
+    "build:server": "cross-env SERVER=true vite build --ssr src/entry-server.ts --outDir dist/server",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@lit-labs/ssr": "^3.0.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "ip": "^2.0.0",
+    "lit": "^2.6.1",
+    "serialize-javascript": "^6.0.1",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.14.0",
+    "@types/serialize-javascript": "^5.0.2",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "@vue/tsconfig": "^0.1.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.34.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "jiti": "^1.17.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.4",
+    "typescript": "~4.7.4",
+    "vite": "^4.1.3",
+    "vue-tsc": "^1.1.5"
+  }
+}
